@@ -71,8 +71,9 @@ function randomizeImgs() {
   if (backgroundOption) {
     backgroundInterval = setInterval(() => {
       let randomNumber = Math.floor(Math.random() * imgsArray.length);
-      landingPage.style.backgroundImage = `url('../imgs/${imgsArray[randomNumber]}')`;
-    }, 1000);
+      landingPage.style.backgroundImage =
+        'url("imgs/' + imgsArray[randomNumber] + '")';
+    }, 10000);
   }
 }
 
@@ -94,9 +95,8 @@ function setimageList() {
     const imageList = document.querySelectorAll(".img-list ul li");
     imageList.forEach((li) => {
       li.addEventListener("click", (e) => {
-        landingPage.style.backgroundImage = `url('../imgs/${
-          imgsArray[e.target.dataset.index]
-        }')`;
+        landingPage.style.backgroundImage =
+          'url("imgs/' + imgsArray[e.target.dataset.index] + '")';
         imageList.forEach((element) => {
           element.classList.remove("active");
           element.classList.remove("item");
